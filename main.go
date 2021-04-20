@@ -1,8 +1,6 @@
 package main
 
 import (
-	"fmt"
-
 	"github.com/whiteagleinc-meli/go-db-gorm/model"
 	"github.com/whiteagleinc-meli/go-db-gorm/storage"
 )
@@ -47,7 +45,24 @@ func main() {
 	// 	fmt.Printf("%d - %s\n", product.ID, product.Name)
 	// }
 
+	// myProduct := model.Product{}
+	// storage.DB().First(&myProduct, 3)
+	// fmt.Println(myProduct)
+
+	// myProduct := model.Product{}
+	// myProduct.ID = 3
+
+	// storage.DB().Model(&myProduct).Updates(
+	// 	model.Product{Name: "Curso de Java", Price: 120},
+	// )
+
+	// myProduct := model.Product{}
+	// myProduct.ID = 3
+
+	// storage.DB().Delete(&myProduct)
+
 	myProduct := model.Product{}
-	storage.DB().First(&myProduct, 3)
-	fmt.Println(myProduct)
+	myProduct.ID = 2
+
+	storage.DB().Unscoped().Delete(&myProduct)
 }
