@@ -35,7 +35,7 @@ func newPostgresDB() {
 	once.Do(func() {
 		var err error
 
-		dsn := "host=localhost user=postgres password=E5p1n0z4% dbname=orm_example sslmode=disable"
+		dsn := "host=localhost user=postgres password=test dbname=orm_example sslmode=disable"
 		db, err = gorm.Open(postgres.Open(dsn), &gorm.Config{})
 
 		if err != nil {

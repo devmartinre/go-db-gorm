@@ -1,7 +1,6 @@
 package main
 
 import (
-	"github.com/whiteagleinc-meli/go-db-gorm/model"
 	"github.com/whiteagleinc-meli/go-db-gorm/storage"
 )
 
@@ -71,12 +70,12 @@ func main() {
 	// storage.DB().Model(&model.InvoiceHeader{}).AddForeignKey("invoice_header_id",
 	// 	"invoice_headers(id)", "RESTRICT", "RESTRICT")
 
-	invoice := model.InvoiceHeader{
-		Client: "Martin Rangel",
-		InvoiceItems: []model.InvoiceItem{
-			{ProductID: 1},
-		},
-	}
+	// invoice := model.InvoiceHeader{
+	// 	Client: "Martin Rangel",
+	// 	InvoiceItems: []model.InvoiceItem{
+	// 		{ProductID: 1},
+	// 	},
+	// }
 
-	storage.DB().Create(&invoice)
+	// storage.DB().Create(&invoice)
 }
